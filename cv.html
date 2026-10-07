@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Modèle CV - Jean Dupont</title>
+  <title>Exemple de CV fictif - Modèle à personnaliser</title>
 
   <style>
     * {
@@ -19,6 +19,12 @@
       margin: 0;
     }
 
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #e9edf2;
@@ -28,21 +34,34 @@
       print-color-adjust: exact;
     }
 
+    /* NOTE */
+    .example-note {
+      max-width: 210mm;
+      margin: 18px auto -12px;
+      padding: 12px 16px;
+      border-left: 4px solid #b45309;
+      background: #fff7ed;
+      color: #7c2d12;
+      font-size: 14px;
+    }
+
+    /* CV */
     .cv {
       width: 210mm;
-      
+      height: 160vh;
+      /* min-height: 297mm; */
       margin: 30px auto;
       background: #fff3f3;
       display: grid;
       grid-template-columns: 68mm 1fr;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
     }
 
-  
-
+    /* SIDEBAR */
     .sidebar {
       background: #172033;
-      color: #ffffff;
+      color: #fff;
       padding: 28px 22px;
     }
 
@@ -70,20 +89,19 @@
       text-transform: uppercase;
       font-weight: 700;
       margin-bottom: 10px;
-      color: #ffffff;
+      color: #fff;
       padding-bottom: 6px;
-      border-bottom: 1px solid rgba(255,255,255,0.25);
+      border-bottom: 1px solid rgba(255, 255, 255, .25);
+    }
+
+    .contact-item,
+    .skill {
+      font-size: 10px;
+      margin-bottom: 8px;
     }
 
     .contact-item {
-      font-size: 10px;
-      margin-bottom: 8px;
       word-break: break-word;
-    }
-
-    .skill {
-      margin-bottom: 8px;
-      font-size: 10px;
     }
 
     .language {
@@ -114,12 +132,10 @@
       color: #aeb8c7;
     }
 
-    /* =========================
-       CONTENU PRINCIPAL
-    ========================= */
-
+    /* MAIN */
     .main {
       padding: 34px 30px;
+      min-width: 0;
     }
 
     .header {
@@ -130,7 +146,7 @@
       font-size: 28px;
       line-height: 1.1;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: -.5px;
       color: #111827;
     }
 
@@ -227,25 +243,121 @@
     }
 
     /* =========================
-       IMPRESSION
-    ========================= */
+           IMPRESSION / PDF
+           ========================= */
 
     @media print {
+
+      html,
       body {
-        background: #ffffff;
+        width: 210mm;
+        height: 10vh;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+
+      .example-note {
+        display: none !important;
       }
 
       .cv {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
         margin: 0;
         box-shadow: none;
+        page-break-after: avoid;
+        page-break-before: avoid;
+        page-break-inside: avoid;
+        overflow: hidden;
+      }
+
+      .sidebar {
+        padding: 20px 18px;
+      }
+
+      .main {
+        padding: 24px 24px;
+      }
+
+      .header {
+        margin-bottom: 18px;
+      }
+
+      .section {
+        margin-bottom: 15px;
+      }
+
+      .experience {
+        margin-bottom: 12px;
+      }
+
+      .project {
+        margin-bottom: 10px;
+      }
+
+      .sidebar-section {
+        margin-bottom: 20px;
+      }
+
+      .photo {
+        margin-bottom: 16px;
       }
     }
 
+    /* MOBILE */
     @media screen and (max-width: 800px) {
+
+      .example-note {
+        margin: 12px;
+      }
+
       .cv {
-        transform-origin: top left;
-        transform: scale(0.75);
-        margin: 20px;
+        width: auto;
+        height: auto;
+        min-height: 0;
+        margin: 12px;
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar,
+      .main {
+        padding: 24px;
+      }
+
+      .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 18px;
+      }
+
+      .photo {
+        grid-column: 1 / -1;
+      }
+
+      .contact-item,
+      .skill,
+      .education-title,
+      .education-school,
+      .education-date,
+      .language,
+      .profile,
+      li,
+      .certification {
+        font-size: 14px;
+      }
+
+      .name {
+        font-size: 26px;
+      }
+
+      .experience-header {
+        flex-wrap: wrap;
+      }
+
+      .date {
+        white-space: normal;
       }
     }
   </style>
@@ -253,27 +365,45 @@
 
 <body>
 
+  
+  <p class="example-note">
+    <strong>Exemple fictif :</strong>
+    les noms, coordonnées, études, expériences et résultats ci-dessous sont inventés.
+    Remplace-les par des informations exactes et adapte le CV aux usages du pays et du poste visés.
+  </p>
+
+
+  <!-- =========================
+         CV
+         ========================= -->
+
   <div class="cv">
 
     <!-- =========================
-         COLONNE GAUCHE
-    ========================= -->
+             SIDEBAR
+             ========================= -->
 
     <aside class="sidebar">
 
+      <!-- PHOTO -->
       <div class="photo">
         PHOTO
       </div>
 
+
+      <!-- CONTACT -->
       <div class="sidebar-section">
-        <div class="sidebar-title">Contact</div>
+
+        <div class="sidebar-title">
+          Contact
+        </div>
 
         <div class="contact-item">
           +237 6 XX XX XX XX
         </div>
 
         <div class="contact-item">
-          jean.dupont@email.com
+          fkamgang06@email.com
         </div>
 
         <div class="contact-item">
@@ -281,31 +411,64 @@
         </div>
 
         <div class="contact-item">
-          linkedin.com/in/jeandupont
+          linkedin.com/in/frank-kamgang
         </div>
 
         <div class="contact-item">
-          jeandupont.dev
+          frank-kamgang.dev
         </div>
+
       </div>
 
 
+      <!-- COMPÉTENCES -->
       <div class="sidebar-section">
-        <div class="sidebar-title">Compétences</div>
 
-        <div class="skill">HTML5 / CSS3</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">TypeScript</div>
-        <div class="skill">React</div>
-        <div class="skill">Laravel</div>
-        <div class="skill">PHP</div>
-        <div class="skill">MySQL</div>
-        <div class="skill">Git / GitHub</div>
+        <div class="sidebar-title">
+          Compétences
+        </div>
+
+        <div class="skill">
+          HTML5 / CSS3
+        </div>
+
+        <div class="skill">
+          JavaScript
+        </div>
+
+        <div class="skill">
+          TypeScript
+        </div>
+
+        <div class="skill">
+          React
+        </div>
+
+        <div class="skill">
+          Laravel
+        </div>
+
+        <div class="skill">
+          PHP
+        </div>
+
+        <div class="skill">
+          MySQL
+        </div>
+
+        <div class="skill">
+          Git / GitHub
+        </div>
+
       </div>
 
 
+      <!-- LANGUES -->
       <div class="sidebar-section">
-        <div class="sidebar-title">Langues</div>
+
+        <div class="sidebar-title">
+          Langues
+        </div>
 
         <div class="language">
           <span>Français</span>
@@ -316,13 +479,19 @@
           <span>Anglais</span>
           <strong>Intermédiaire</strong>
         </div>
+
       </div>
 
 
+      <!-- FORMATION -->
       <div class="sidebar-section">
-        <div class="sidebar-title">Formation</div>
+
+        <div class="sidebar-title">
+          Formation
+        </div>
 
         <div class="education-item">
+
           <div class="education-title">
             BTS — Génie Logiciel
           </div>
@@ -334,9 +503,12 @@
           <div class="education-date">
             2024 – 2026
           </div>
+
         </div>
 
+
         <div class="education-item">
+
           <div class="education-title">
             Baccalauréat
           </div>
@@ -348,32 +520,51 @@
           <div class="education-date">
             2023
           </div>
+
         </div>
+
       </div>
 
 
+      <!-- INTÉRÊTS -->
       <div class="sidebar-section">
-        <div class="sidebar-title">Intérêts</div>
 
-        <div class="skill">Technologie</div>
-        <div class="skill">Entrepreneuriat</div>
-        <div class="skill">Design</div>
-        <div class="skill">Innovation</div>
+        <div class="sidebar-title">
+          Intérêts
+        </div>
+
+        <div class="skill">
+          Technologie
+        </div>
+
+        <div class="skill">
+          Entrepreneuriat
+        </div>
+
+        <div class="skill">
+          Design
+        </div>
+
+        <div class="skill">
+          Innovation
+        </div>
+
       </div>
 
     </aside>
 
 
     <!-- =========================
-         CONTENU PRINCIPAL
-    ========================= -->
+             CONTENU PRINCIPAL
+             ========================= -->
 
     <main class="main">
 
+      <!-- HEADER -->
       <header class="header">
 
         <div class="name">
-          JEAN DUPONT
+          FRANK KAMGANG
         </div>
 
         <div class="job-title">
@@ -384,7 +575,6 @@
 
 
       <!-- PROFIL -->
-
       <section class="section">
 
         <h2 class="section-title">
@@ -404,8 +594,7 @@
       </section>
 
 
-      <!-- EXPERIENCE -->
-
+      <!-- EXPÉRIENCE -->
       <section class="section">
 
         <h2 class="section-title">
@@ -417,6 +606,7 @@
           <div class="experience-header">
 
             <div>
+
               <div class="experience-title">
                 Stagiaire Développeur Web
               </div>
@@ -424,6 +614,7 @@
               <div class="company">
                 ABC Digital — Yaoundé
               </div>
+
             </div>
 
             <div class="date">
@@ -432,7 +623,9 @@
 
           </div>
 
+
           <ul>
+
             <li>
               Participation au développement de sites web.
             </li>
@@ -452,6 +645,7 @@
             <li>
               Utilisation de Git pour le suivi du code.
             </li>
+
           </ul>
 
         </div>
@@ -460,12 +654,12 @@
 
 
       <!-- PROJETS -->
-
       <section class="section">
 
         <h2 class="section-title">
           Projets
         </h2>
+
 
         <div class="project">
 
@@ -478,6 +672,7 @@
           </div>
 
           <ul>
+
             <li>
               Conception d'un site web responsive pour une entreprise locale.
             </li>
@@ -489,6 +684,7 @@
             <li>
               Mise en ligne et optimisation pour mobile.
             </li>
+
           </ul>
 
         </div>
@@ -505,6 +701,7 @@
           </div>
 
           <ul>
+
             <li>
               Conception de la base de données.
             </li>
@@ -516,6 +713,7 @@
             <li>
               Création des interfaces utilisateur.
             </li>
+
           </ul>
 
         </div>
@@ -524,7 +722,6 @@
 
 
       <!-- CERTIFICATIONS -->
-
       <section class="section">
 
         <h2 class="section-title">
@@ -550,4 +747,5 @@
   </div>
 
 </body>
+
 </html>

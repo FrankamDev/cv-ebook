@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Développeur Web</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e9ecef;
+            color: #222;
+            line-height: 1.45;
+        }
+
+        .cv {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: #ffffff;
+            display: grid;
+            grid-template-columns: 70mm 1fr;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+        }
+
+        /* =========================
+           COLONNE GAUCHE
+        ========================= */
+
+        .sidebar {
+            background: #172033;
+            color: #ffffff;
+            padding: 28px 22px;
+        }
+
+        .photo {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #d9dde5;
+            border: 4px solid #ffffff;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar h2 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .contact p {
+            font-size: 11px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .skills {
+            list-style: none;
+        }
+
+        .skills li {
+            font-size: 11px;
+            margin-bottom: 7px;
+        }
+
+        .language {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            margin-bottom: 7px;
+        }
+
+        .interest {
+            font-size: 11px;
+            margin-bottom: 6px;
+        }
+
+        /* =========================
+           CONTENU PRINCIPAL
+        ========================= */
+
+        .main {
+            padding: 30px 30px 25px;
+        }
+
+        .header {
+            border-bottom: 2px solid #172033;
+            padding-bottom: 18px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 30px;
+            color: #172033;
+            letter-spacing: 0.5px;
+        }
+
+        .header .job-title {
+            font-size: 14px;
+            color: #4d6bfe;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .profile {
+            font-size: 11.5px;
+            color: #444;
+            margin-top: 13px;
+            text-align: justify;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #172033;
+            letter-spacing: 1px;
+            margin-bottom: 11px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #4d6bfe;
+        }
+
+        .item {
+            margin-bottom: 14px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .item-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .item-date {
+            font-size: 10px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .item-company {
+            font-size: 11px;
+            color: #4d6bfe;
+            font-weight: bold;
+            margin: 2px 0 5px;
+        }
+
+        .item-description {
+            font-size: 10.5px;
+            color: #444;
+            text-align: justify;
+        }
+
+        .item ul {
+            padding-left: 16px;
+            margin-top: 5px;
+        }
+
+        .item li {
+            font-size: 10.5px;
+            margin-bottom: 3px;
+            color: #444;
+        }
+
+        .education-item {
+            margin-bottom: 10px;
+        }
+
+        .education-title {
+            font-size: 11.5px;
+            font-weight: bold;
+        }
+
+        .education-school {
+            font-size: 10.5px;
+            color: #4d6bfe;
+        }
+
+        .education-date {
+            font-size: 10px;
+            color: #666;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 9.5px;
+            padding: 4px 8px;
+            border: 1px solid #d8dce5;
+            border-radius: 3px;
+            color: #333;
+            background: #f8f9fb;
+        }
+
+        .reference {
+            font-size: 10.5px;
+            color: #555;
+        }
+
+        /* =========================
+           IMPRESSION
+        ========================= */
+
+        @media print {
+            body {
+                background: #ffffff;
+            }
+
+            .cv {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="cv">
+
+    <!-- =========================
+         COLONNE GAUCHE
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="photo">
+            <!-- Remplace photo.jpg par ta photo -->
+            <img src="photo.jpg" alt="Photo professionnelle">
+        </div>
+
+        <div class="contact">
+            <h2>Contact</h2>
+
+            <p>📱 +237 6 XX XX XX XX</p>
+            <p>✉️ jean.dupont@email.com</p>
+            <p>📍 Yaoundé, Cameroun</p>
+            <p>🔗 linkedin.com/in/jeandupont</p>
+            <p>💻 github.com/jeandupont</p>
+        </div>
+
+        <div>
+            <h2>Compétences</h2>
+
+            <ul class="skills">
+                <li>HTML / CSS</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>TypeScript</li>
+                <li>PHP / Laravel</li>
+                <li>MySQL</li>
+                <li>Git / GitHub</li>
+                <li>Responsive Design</li>
+                <li>API REST</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Langues</h2>
+
+            <div class="language">
+                <span>Français</span>
+                <strong>Courant</strong>
+            </div>
+
+            <div class="language">
+                <span>Anglais</span>
+                <strong>Intermédiaire</strong>
+            </div>
+        </div>
+
+        <div>
+            <h2>Centres d'intérêt</h2>
+
+            <p class="interest">• Technologie</p>
+            <p class="interest">• Développement web</p>
+            <p class="interest">• Design numérique</p>
+            <p class="interest">• Veille technologique</p>
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         CONTENU PRINCIPAL
+    ========================== -->
+
+    <main class="main">
+
+        <header class="header">
+
+            <h1>JEAN DUPONT</h1>
+
+            <div class="job-title">
+                DÉVELOPPEUR WEB JUNIOR
+            </div>
+
+            <p class="profile">
+                Développeur web junior passionné par la création d'applications
+                modernes, performantes et adaptées aux besoins des utilisateurs.
+                Je maîtrise le développement frontend et backend et souhaite
+                rejoindre une équipe dans laquelle je pourrai contribuer à des
+                projets concrets tout en continuant à développer mes compétences.
+            </p>
+
+        </header>
+
+
+        <!-- EXPÉRIENCE -->
+
+        <section class="section">
+
+            <h2 class="section-title">Expériences professionnelles</h2>
+
+            <div class="item">
+
+                <div class="item-header">
+                    <div class="item-title">
+                        Développeur Web Junior
+                    </div>
+
+                    <div class="item-date">
+                        2025 – 2026
+                    </div>
+                </div>
+
+                <div class="item-company">
+                    Digital Solutions — Yaoundé
+                </div>
+
+                <ul>
+                    <li>Développement de sites web responsives.</li>
+                    <li>Création de fonctionnalités avec React et Laravel.</li>
+                    <li>Intégration d'API et gestion de bases de données.</li>
+                    <li>Correction de bugs et amélioration des interfaces.</li>
+                </ul>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="item-header">
+                    <div class="item-title">
+                        Stagiaire Développeur Web
+                    </div>
+
+                    <div class="item-date">
+                        2024 – 2025
+                    </div>
+                </div>
+
+                <div class="item-company">
+                    WebTech Agency — Yaoundé
+                </div>
+
+                <ul>
+                    <li>Participation à la création de sites vitrines.</li>
+                    <li>Intégration de maquettes avec HTML et CSS.</li>
+                    <li>Utilisation de Git et GitHub pour le travail en équipe.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJETS -->
+
+        <section class="section">
+
+            <h2 class="section-title">Projets</h2>
+
+            <div class="item">
+
+                <div class="item-header">
+                    <div class="item-title">
+                        Plateforme de gestion scolaire
+                    </div>
+
+                    <div class="item-date">
+                        Projet personnel
+                    </div>
+                </div>
+
+                <div class="item-description">
+                    Développement d'une application permettant de gérer les
+                    étudiants, les formations et les informations administratives.
+                </div>
+
+                <div class="tags">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Blade</span>
+                </div>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="item-header">
+                    <div class="item-title">
+                        Site vitrine pour une entreprise
+                    </div>
+
+                    <div class="item-date">
+                        Projet freelance
+                    </div>
+                </div>
+
+                <div class="item-description">
+                    Création d'un site professionnel présentant les services,
+                    réalisations et coordonnées d'une entreprise.
+                </div>
+
+                <div class="tags">
+                    <span class="tag">React</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Tailwind CSS</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMATION -->
+
+        <section class="section">
+
+            <h2 class="section-title">Formation</h2>
+
+            <div class="education-item">
+
+                <div class="education-title">
+                    BTS — Génie Logiciel
+                </div>
+
+                <div class="education-school">
+                    Institut Supérieur des Technologies
+                </div>
+
+                <div class="education-date">
+                    2024 – 2026
+                </div>
+
+            </div>
+
+
+            <div class="education-item">
+
+                <div class="education-title">
+                    Baccalauréat
+                </div>
+
+                <div class="education-school">
+                    Lycée de Yaoundé
+                </div>
+
+                <div class="education-date">
+                    2023
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CERTIFICATIONS -->
+
+        <section class="section">
+
+            <h2 class="section-title">Certifications</h2>
+
+            <div class="education-item">
+
+                <div class="education-title">
+                    Certification Développement Web
+                </div>
+
+                <div class="education-school">
+                    OpenClassrooms
+                </div>
+
+                <div class="education-date">
+                    2025
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPÉTENCES COMPLÉMENTAIRES -->
+
+        <section class="section">
+
+            <h2 class="section-title">Compétences complémentaires</h2>
+
+            <div class="tags">
+                <span class="tag">Travail en équipe</span>
+                <span class="tag">Résolution de problèmes</span>
+                <span class="tag">Autonomie</span>
+                <span class="tag">Organisation</span>
+                <span class="tag">Communication</span>
+            </div>
+
+        </section>
+
+
+        <!-- RÉFÉRENCE -->
+
+        <section class="section">
+
+            <h2 class="section-title">Références</h2>
+
+            <p class="reference">
+                Disponibles sur demande.
+            </p>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

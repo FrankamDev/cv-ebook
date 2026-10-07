@@ -496,28 +496,25 @@ Si tu es pressé, utilise cette version rapide avant chaque candidature :
 
 ---
 
-# 24. TON SCORE FINAL
+# 24. LES POINTS À VÉRIFIER AVANT L'ENVOI
 
-Compte le nombre de cases que tu as cochées.
+Ne transforme pas cette checklist en note globale : toutes les cases n'ont pas la même importance selon le poste. Avant chaque envoi, vérifie au minimum ces points bloquants :
 
-### 90 % à 100 %
+☐ Les coordonnées permettent de te joindre et sont correctes.
 
-**Ton CV est prêt.**
+☐ Le poste visé est clair et le CV est adapté à l'offre.
 
-Tu peux effectuer une dernière lecture puis envoyer ta candidature.
+☐ Chaque expérience, compétence, date et diplôme est exact et défendable en entretien.
 
-### 75 % à 89 %
+☐ Le CV est lisible sur téléphone et tient dans le nombre de pages utile à ton parcours.
 
-**Ton CV est presque prêt.**
+☐ Le PDF a été ouvert après export et ne contient ni texte coupé ni page blanche inattendue.
 
-Corrige les éléments manquants avant de l'envoyer.
+☐ Le bon fichier est joint et son nom permet de l'identifier.
 
-### Moins de 75 %
+☐ Le message, le destinataire et la pièce jointe ont été vérifiés avant l'envoi.
 
-**Ne l'envoie pas encore.**
-
-Prends quelques minutes pour corriger les principaux problèmes.
-
+Si un de ces points manque, corrige-le avant de postuler. Les autres cases servent à améliorer le CV selon le contexte.
 ---
 
 # FICHE DE VÉRIFICATION
@@ -594,3 +591,4 @@ Et surtout, n'oublie jamais :
 Lorsque toutes les cases importantes sont cochées :
 
 **ton CV est prêt à partir.**
+

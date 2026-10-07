@@ -1,3 +1,10 @@
+# Kit CV Pro
+
+## Guide pratique pour créer et gérer ses candidatures depuis un smartphone
+
+> Les personnes, coordonnées, écoles, entreprises, dates, compétences et résultats utilisés dans les exemples sont fictifs. Remplace-les par tes informations exactes. Les règles de recrutement et les usages du CV varient selon le pays, le secteur et l'offre : vérifie les consignes locales avant d'envoyer ta candidature.
+
+---
 # INTRODUCTION
 
 ## Ton téléphone peut devenir ton outil de recrutement
@@ -6863,6 +6870,8 @@ Dans le prochain chapitre, nous allons apprendre à utiliser **ChatGPT comme ass
 
 # CHAPITRE 10 — UTILISER CHATGPT COMME ASSISTANT CV
 
+> **Protège tes données :** avant de coller un CV ou une offre dans un outil d'IA, retire ton numéro de téléphone, ton adresse personnelle, ton e-mail, tes identifiants et toute information confidentielle. Remplace-les par des marqueurs comme `[TÉLÉPHONE]` ou `[ENTREPRISE]`. Vérifie les règles de confidentialité du service utilisé et contrôle chaque réponse : l'IA peut se tromper ou inventer des détails.
+
 ## Ton téléphone peut t'aider à mieux rédiger ton CV
 
 Créer un CV ne consiste pas seulement à choisir une belle mise en page.
@@ -10104,3 +10113,4 @@ Ton CV peut être ton premier argument.
 Et ta prochaine candidature peut être celle qui ouvrira une nouvelle opportunité.
 
 **Commence maintenant.**
+

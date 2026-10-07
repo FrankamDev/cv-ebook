@@ -2,6 +2,8 @@
 
 ## Tous les outils dont tu as besoin pour tes prochaines candidatures
 
+> Avant d'utiliser un prompt, anonymise ton CV et l'offre : enlève coordonnées, identifiants et informations confidentielles. Remplace-les par des marqueurs, puis vérifie toute réponse de l'IA et ne conserve que les faits exacts.
+
 Tu as maintenant appris à construire un CV professionnel depuis ton téléphone.
 
 Mais lorsque tu commenceras à envoyer régulièrement des candidatures, tu te rendras compte d'une chose :
