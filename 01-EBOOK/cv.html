@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Modèle CV - Jean Dupont</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #e9edf2;
+      color: #1f2937;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cv {
+      width: 210mm;
+      /* min-height: 297mm; */
+      margin: 30px auto;
+      background: #fff3f3;
+      display: grid;
+      grid-template-columns: 68mm 1fr;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+  
+
+    .sidebar {
+      background: #172033;
+      color: #ffffff;
+      padding: 28px 22px;
+    }
+
+    .photo {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: #dce2ea;
+      margin: 0 auto 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #172033;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .sidebar-section {
+      margin-bottom: 28px;
+    }
+
+    .sidebar-title {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ffffff;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .contact-item {
+      font-size: 10px;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    .skill {
+      margin-bottom: 8px;
+      font-size: 10px;
+    }
+
+    .language {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 10px;
+      margin-bottom: 7px;
+    }
+
+    .education-item {
+      margin-bottom: 14px;
+    }
+
+    .education-title {
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .education-school {
+      font-size: 9px;
+      margin-top: 2px;
+      color: #d1d7e0;
+    }
+
+    .education-date {
+      font-size: 9px;
+      color: #aeb8c7;
+    }
+
+    /* =========================
+       CONTENU PRINCIPAL
+    ========================= */
+
+    .main {
+      padding: 34px 30px;
+    }
+
+    .header {
+      margin-bottom: 25px;
+    }
+
+    .name {
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #111827;
+    }
+
+    .job-title {
+      margin-top: 7px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #334e68;
+      text-transform: uppercase;
+    }
+
+    .section {
+      margin-bottom: 23px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: #172033;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #172033;
+    }
+
+    .profile {
+      font-size: 10.5px;
+      color: #4b5563;
+      text-align: justify;
+    }
+
+    .experience {
+      margin-bottom: 18px;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .experience-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .company {
+      font-size: 10px;
+      color: #4b5563;
+      margin-top: 2px;
+    }
+
+    .date {
+      font-size: 9px;
+      color: #6b7280;
+      white-space: nowrap;
+    }
+
+    ul {
+      margin-top: 7px;
+      padding-left: 17px;
+    }
+
+    li {
+      font-size: 9.8px;
+      color: #4b5563;
+      margin-bottom: 4px;
+    }
+
+    .project {
+      margin-bottom: 15px;
+    }
+
+    .project-title {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .project-meta {
+      font-size: 9px;
+      color: #6b7280;
+      margin: 2px 0 5px;
+    }
+
+    .certification {
+      font-size: 10px;
+      margin-bottom: 7px;
+      color: #4b5563;
+    }
+
+    /* =========================
+       IMPRESSION
+    ========================= */
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .cv {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      .cv {
+        transform-origin: top left;
+        transform: scale(0.75);
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cv">
+
+    <!-- =========================
+         COLONNE GAUCHE
+    ========================= -->
+
+    <aside class="sidebar">
+
+      <div class="photo">
+        PHOTO
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Contact</div>
+
+        <div class="contact-item">
+          +237 6 XX XX XX XX
+        </div>
+
+        <div class="contact-item">
+          jean.dupont@email.com
+        </div>
+
+        <div class="contact-item">
+          Yaoundé, Cameroun
+        </div>
+
+        <div class="contact-item">
+          linkedin.com/in/jeandupont
+        </div>
+
+        <div class="contact-item">
+          jeandupont.dev
+        </div>
+      </div>
+
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Compétences</div>
+
+        <div class="skill">HTML5 / CSS3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">TypeScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Laravel</div>
+        <div class="skill">PHP</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">Git / GitHub</div>
+      </div>
+
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Langues</div>
+
+        <div class="language">
+          <span>Français</span>
+          <strong>Courant</strong>
+        </div>
+
+        <div class="language">
+          <span>Anglais</span>
+          <strong>Intermédiaire</strong>
+        </div>
+      </div>
+
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Formation</div>
+
+        <div class="education-item">
+          <div class="education-title">
+            BTS — Génie Logiciel
+          </div>
+
+          <div class="education-school">
+            Institut XYZ — Yaoundé
+          </div>
+
+          <div class="education-date">
+            2024 – 2026
+          </div>
+        </div>
+
+        <div class="education-item">
+          <div class="education-title">
+            Baccalauréat
+          </div>
+
+          <div class="education-school">
+            Lycée XYZ — Yaoundé
+          </div>
+
+          <div class="education-date">
+            2023
+          </div>
+        </div>
+      </div>
+
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Intérêts</div>
+
+        <div class="skill">Technologie</div>
+        <div class="skill">Entrepreneuriat</div>
+        <div class="skill">Design</div>
+        <div class="skill">Innovation</div>
+      </div>
+
+    </aside>
+
+
+    <!-- =========================
+         CONTENU PRINCIPAL
+    ========================= -->
+
+    <main class="main">
+
+      <header class="header">
+
+        <div class="name">
+          JEAN DUPONT
+        </div>
+
+        <div class="job-title">
+          Développeur Web Junior
+        </div>
+
+      </header>
+
+
+      <!-- PROFIL -->
+
+      <section class="section">
+
+        <h2 class="section-title">
+          Profil professionnel
+        </h2>
+
+        <p class="profile">
+          Étudiant en génie logiciel passionné par le développement web
+          et la création d'applications modernes. Je possède des compétences
+          en HTML, CSS, JavaScript, React et Laravel et j'ai réalisé plusieurs
+          projets personnels et académiques. Je recherche un stage ou une
+          première opportunité professionnelle afin de mettre mes compétences
+          en pratique et de continuer à progresser dans un environnement
+          professionnel.
+        </p>
+
+      </section>
+
+
+      <!-- EXPERIENCE -->
+
+      <section class="section">
+
+        <h2 class="section-title">
+          Expérience
+        </h2>
+
+        <div class="experience">
+
+          <div class="experience-header">
+
+            <div>
+              <div class="experience-title">
+                Stagiaire Développeur Web
+              </div>
+
+              <div class="company">
+                ABC Digital — Yaoundé
+              </div>
+            </div>
+
+            <div class="date">
+              Juin 2026 – Août 2026
+            </div>
+
+          </div>
+
+          <ul>
+            <li>
+              Participation au développement de sites web.
+            </li>
+
+            <li>
+              Correction de bugs et amélioration des interfaces.
+            </li>
+
+            <li>
+              Intégration de nouvelles fonctionnalités.
+            </li>
+
+            <li>
+              Collaboration avec les membres de l'équipe.
+            </li>
+
+            <li>
+              Utilisation de Git pour le suivi du code.
+            </li>
+          </ul>
+
+        </div>
+
+      </section>
+
+
+      <!-- PROJETS -->
+
+      <section class="section">
+
+        <h2 class="section-title">
+          Projets
+        </h2>
+
+        <div class="project">
+
+          <div class="project-title">
+            Site web vitrine — Projet personnel
+          </div>
+
+          <div class="project-meta">
+            2026
+          </div>
+
+          <ul>
+            <li>
+              Conception d'un site web responsive pour une entreprise locale.
+            </li>
+
+            <li>
+              Développement avec React et Tailwind CSS.
+            </li>
+
+            <li>
+              Mise en ligne et optimisation pour mobile.
+            </li>
+          </ul>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-title">
+            Application de gestion — Projet académique
+          </div>
+
+          <div class="project-meta">
+            2025
+          </div>
+
+          <ul>
+            <li>
+              Conception de la base de données.
+            </li>
+
+            <li>
+              Développement des fonctionnalités principales avec Laravel.
+            </li>
+
+            <li>
+              Création des interfaces utilisateur.
+            </li>
+          </ul>
+
+        </div>
+
+      </section>
+
+
+      <!-- CERTIFICATIONS -->
+
+      <section class="section">
+
+        <h2 class="section-title">
+          Certifications
+        </h2>
+
+        <div class="certification">
+          • Formation HTML & CSS — OpenClassrooms
+        </div>
+
+        <div class="certification">
+          • Introduction à JavaScript — Formation en ligne
+        </div>
+
+        <div class="certification">
+          • Git et GitHub — Formation en ligne
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
